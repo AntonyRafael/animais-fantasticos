@@ -1,7 +1,8 @@
-export default function initBitCoins() {
+export default function fetchBitcoin(url, target) {
   // https://blockchain.info/ticker
-  const spanBtc = document.querySelector('.btc-preco');
-  fetch('https://blockchain.info/ticker')
+  const spanBtc = document.querySelector(target);
+  // const url = 'https://blockchain.info/ticker';
+  fetch(url)
     .then((response) => response.json())
     .then((json) => {
       const valorCompra = json.BRL.sell;
